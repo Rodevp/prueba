@@ -1,0 +1,169 @@
+<script lang="ts" setup>
+import BaseInput from '../common/BaseInput.vue'
+import BaseButton from '../common/BaseButton.vue'
+
+import { useLogin } from './hooks.js'
+import SliderLogin from '../sliderLogin/SliderLogin.vue'
+import { useRouter } from 'vue-router';
+
+const { email, handleEmail, password, handlePasword } = useLogin()
+
+const route = useRouter()
+
+
+</script>
+
+<template>
+    <div class="wrapper">
+        <section class="login">
+            <form>
+                <img src="../../assets/register.png" alt="logo" width="300" height="100" loading="lazy" />
+                <form>
+                    <BaseInput type="email" placeholder="Email" label="Email" :update="handleEmail" :text="email" />
+                    <BaseInput type="password" placeholder="Contraseña" label="Contraseña" :update="handlePasword"
+                        :text="password" />
+                    <BaseInput type="password" placeholder="Contraseña" label="Contraseña" :update="handlePasword"
+                        :text="password" />
+                    <BaseInput type="password" placeholder="Contraseña" label="Contraseña" :update="handlePasword"
+                        :text="password" />
+                    <BaseInput type="password" placeholder="Contraseña" label="Contraseña" :update="handlePasword"
+                        :text="password" />
+                    <BaseInput type="password" placeholder="Contraseña" label="Contraseña" :update="handlePasword"
+                        :text="password" />
+                    <BaseInput type="password" placeholder="Contraseña" label="Contraseña" :update="handlePasword"
+                        :text="password" />
+                    <BaseButton text="Acceder" />
+                </form>
+                <div class="socials">
+                    <div></div>
+                    <h3>Logueate con RRSS</h3>
+                    <div></div>
+                </div>
+                <div class="socials_logo">
+                    <img src="../../assets/instragram.png" alt="instragram logo" width="51" height="51" />
+                    <img src="../../assets/twitter.png" alt="twitter logo" width="51" height="51" />
+                    <img src="../../assets/fb.png" alt="facebook logo" width="51" height="51" />
+                </div>
+                <p class="register">
+                    Ya tienes cuenta? <span @click="route.push('/')">Accede</span>
+                </p>
+            </form>
+        </section>
+        <section class="content_slider">
+            <SliderLogin />
+        </section>
+    </div>
+</template>
+
+<style scoped>
+.wrapper {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.content_slider {
+    width: 50%;
+    height: 100vh;
+    background-color: #3E1149;
+
+}
+
+.login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    background-color: #000000;
+}
+
+.login>form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.title {
+    font-weight: 900;
+    font-size: 30px;
+    line-height: 55px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.subtitle {
+    font-style: italic;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 19px;
+    text-align: center;
+    letter-spacing: 0.065em;
+    color: #FFFFFF;
+}
+
+.restartPassword {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    text-align: center;
+    color: #E487FB;
+}
+
+.restarMsg {
+    display: flex;
+    justify-content: end;
+    margin-bottom: 0.5rem;
+}
+
+.socials {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem;
+    margin: 1rem 0;
+}
+
+.socials>div {
+    width: 100px;
+    height: 2px;
+    margin: 0 0.5rem;
+    background-color: #FFFFFF;
+}
+
+.socials>h3 {
+    width: 110px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.socials_logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.socials_logo img {
+    margin: 0 1rem;
+    cursor: pointer;
+}
+
+.register {
+    font-weight: 400;
+    margin-bottom: 1rem;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    letter-spacing: 0.065em;
+    color: #FFFFFF;
+}
+
+.register>span {
+    color: #E487FB;
+}
+</style>
