@@ -34,11 +34,12 @@ h2>span {
 }
 
 p {
-    width: 80%;
+    width: 100%;
     font-weight: 400;
     font-size: 12px;
     line-height: 21px;
     text-align: center;
     color: #FFFFFF;
+    align-self: center;
 }
 </style>
