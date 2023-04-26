@@ -5,9 +5,7 @@ import FooterSlider from './FooterSlider.vue';
 
 <template>
     <section class="wrapper">
-        <div
-            class="content_character"
-        >
+        <div class="content_character">
             <div class="circle">
 
             </div>
@@ -15,7 +13,12 @@ import FooterSlider from './FooterSlider.vue';
                 <img width="360" height="360" src="../../assets/tanjiro.png" loading="lazy" />
             </div>
         </div>
-        <FooterSlider />
+        <FooterSlider
+            title="yabu."
+            description="Ver anime en línea en HD, subtitulado o doblado,
+            en tu celular o computadora.
+            ¡Animeyabu, tu portal de anime en línea!"
+        />
     </section>
 </template>
 

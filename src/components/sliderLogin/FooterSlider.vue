@@ -1,11 +1,20 @@
+<script lang="ts" setup>
+
+interface Props {
+    title: string
+    description: string
+}
+
+const props = defineProps<Props>()
+
+</script>
+
 <template>
     <h2>
-        anime<span>yabu.</span>
+        anime<span>{{ props.title }}</span>
     </h2>
     <p>
-        Ver anime en línea en HD, subtitulado o doblado,
-        en tu celular o computadora.
-        ¡Animeyabu, tu portal de anime en línea!
+        {{ props.description }}
     </p>
 </template>
 
@@ -20,7 +29,7 @@ h2 {
     color: #FFFFFF;
 }
 
-h2 > span {
+h2>span {
     color: #CA38ED;
 }
 
