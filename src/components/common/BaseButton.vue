@@ -3,6 +3,8 @@
 interface Props {
     text: string
     handleClick?: Function
+    width?: number | string
+    height?: number | string
 }
 
 const props = defineProps<Props>()
@@ -10,7 +12,7 @@ const props = defineProps<Props>()
 </script>
 
 <template>
-    <button @click="props.handleClick">{{ props.text }}</button>
+    <button :style="{ height: props.height, width: props.width  }" @click="props.handleClick">{{ props.text }}</button>
 </template>
 
 <style scoped>

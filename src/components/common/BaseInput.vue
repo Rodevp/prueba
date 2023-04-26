@@ -4,6 +4,8 @@ interface Props {
     label: string | boolean
     text: string
     update: Function
+    width?: number | string
+    height?: number | string
 }
 
 const props = defineProps<Props>();
@@ -18,7 +20,13 @@ const updateValue = (event: Event) => {
 <template>
     <div class="input-wrap">
         <label v-if="props.label">{{ props.label }}</label>
-        <input type="text" :value="props.text" @input="updateValue" v-bind="$attrs" />
+        <input 
+            type="text"
+            :value="props.text"
+            @input="updateValue"
+            v-bind="$attrs" 
+            :style="{ height: props.height, width: props.width  }"
+        />
     </div>
 </template>
 
