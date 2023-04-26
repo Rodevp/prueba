@@ -8,6 +8,7 @@ interface Props {
     height?: number | string
 }
 
+
 const props = defineProps<Props>();
 
 const updateValue = (event: Event) => {

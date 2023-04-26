@@ -3,6 +3,7 @@ import BaseInput from '../common/BaseInput.vue'
 import BaseButton from '../common/BaseButton.vue'
 
 import { useLogin } from './hooks'
+import SliderLogin from '../sliderLogin/SliderLogin.vue';
 
 const { email, handleEmail, password, handlePasword } = useLogin()
 
@@ -47,7 +48,7 @@ const { email, handleEmail, password, handlePasword } = useLogin()
             </form>
         </section>
         <section class="content_slider">
-
+            <SliderLogin />
         </section>
     </div>
 </template>
@@ -58,6 +59,13 @@ const { email, handleEmail, password, handlePasword } = useLogin()
     display: flex;
     width: 100%;
     height: 100%;
+}
+
+.content_slider {
+    width: 50%;
+    height: 100%;
+    background-color: #3E1149;
+
 }
 
 .login {
